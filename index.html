@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandra Vitulano | Academia de Costura</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --beige-claro: #f8f5f2;
+            --beige-medio: #e3d5ca;
+            --nude-oscuro: #d5bdaf;
+            --texto: #5e503f;
+            --blanco: #ffffff;
+        }
+
+        body { 
+            font-family: 'Georgia', serif; 
+            background-color: var(--beige-claro); 
+            margin: 0; 
+            color: var(--texto); 
+            line-height: 1.8;
+        }
+        
+        header { 
+            background-color: #5e503f; 
+            padding: 20px 40px; 
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            min-height: 180px;
+        }
+
+        .foto-header {
+            width: 150px; 
+            height: 180px;
+            border: 4px solid white;
+            border-radius: 5px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        .texto-header {
+            flex-grow: 1;
+            text-align: center;
+            padding-right: 150px;
+        }
+
+        header h1 { 
+            font-family: 'Great Vibes', cursive !important; 
+            font-size: 4.5rem; 
+            margin: 0; 
+            color: white; 
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+            font-weight: 400;
+        }
+
+        header p { 
+            color: white; 
+            margin: 0; 
+            font-size: 1.2rem; 
+            font-style: italic;
+        }
+
+        .subtitulo-seccion { text-align: center; margin: 40px 0 20px; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 2px; }
+        .grid-cursos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 20px; }
+        .tarjeta { background: var(--blanco); width: 320px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+        .imagen-curso { width: 100%; height: 250px; object-fit: cover; background-color: #eee; }
+        .info { padding: 25px; text-align: center; flex-grow: 1; }
+        .precio { font-size: 1.5rem; color: var(--nude-oscuro); margin: 15px 0; font-weight: bold; }
+        
+        .boton { background-color: var(--texto); color: var(--blanco); padding: 15px; display: block; text-decoration: none; text-transform: uppercase; font-size: 0.75rem; font-weight: bold; text-align: center; border: none; cursor: pointer; width: 100%; box-sizing: border-box; }
+        .boton-detalles { background-color: var(--nude-oscuro); margin-bottom: 8px; border-radius: 5px; }
+
+        .seccion-patrones { background-color: var(--beige-medio); padding: 40px 20px; text-align: center; margin: 30px 0; }
+        .sobre-mi { max-width: 700px; margin: 50px auto; padding: 40px; background: white; text-align: center; border: 1px solid var(--nude-oscuro); border-radius: 10px; }
+        .nombre-firma { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--nude-oscuro); }
+
+        footer { text-align: center; padding: 40px 20px; background-color: #f8f5f2; }
+        .redes-iconos { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+        .redes-iconos a { font-size: 2.8rem; color: var(--nude-oscuro); transition: 0.3s; }
+        .redes-iconos a:hover { color: var(--texto); transform: translateY(-5px); }
+
+        .modal-emergente { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); overflow:auto; }
+        .modal-contenido { background-color:white; margin:10% auto; padding:30px; border-radius:10px; width:85%; max-width:500px; position:relative; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; padding: 20px; text-align: center; }
+            .texto-header { padding-right: 0; margin-top: 15px; }
+            header h1 { font-size: 3.5rem; }
+        }
+        .galeria-modal { position: relative; width: 100%; overflow: hidden; border-radius: 8px; margin-bottom: 15px; background: #000; }
+        .slides-modal { display: flex; transition: transform 0.5s ease; }
+        .slides-modal img, .slides-modal video { width: 100%; height: auto; max-height: 500px; object-fit: contain; flex-shrink: 0; }
+        .btn-slide { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(94, 80, 63, 0.7); color: white; border: none; padding: 10px 15px; cursor: pointer; font-size: 20px; z-index: 10; border-radius: 50%; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="yo.jpeg" class="foto-header" alt="Alejandra Vitulano">
+    <div class="texto-header">
+        <h1>Alejandra Vitulano</h1>
+        <p>Diseño y Confección</p>
+    </div>
+</header>
+
+<h2 class="subtitulo-seccion">Nuestros Cursos</h2>
+
+<div class="grid-cursos">
+    <div class="tarjeta">
+        <img src="jersey.jpg..jpeg" style="width:60%; height:250px; object-fit:cover; display: block; margin: auto;" class="imagen-curso" alt="Curso Jersey">
+        <div class="info">
+            <h3>Curso: Jersey</h3>
+            <p>Domina el manejo de telas elásticas y crea tu primer jersey profesional.</p>
+            <p class="precio">$5.00</p>
+            <button class="boton boton-detalles" onclick="abrirModal(
+                'Curso de Jersey', 
+                'Aprenderás a manejar telas elásticas y acabados de lujo. Incluye PDF.', 
+                'https://wa.me/584244048623?text=Hola Alejandra! Quiero inscribirme en el Curso de Jersey por Pago Movil.', 
+                'https://wa.me/584244048623?text=Hola Alejandra! Me interesa el Curso de Jersey por Binance Pay.', 
+                'https://alejandravitulano.gumroad.com/l/zqrtx',
+                'https://www.youtube.com/watch?v=165EvVxnDtg',
+                ['jersey.jpg..jpeg', 'video-jersey.jpeg.mp4.mp4'] 
+            )">Ver detalles</button>
+            <a href="https://wa.me/584244048623?text=Hola Alejandra, me interesa el curso de Jersey" class="boton" target="_blank">Inscribirme</a>
+        </div>
+    </div>
+
+    <div class="tarjeta">
+        <img src="pijama.jpg" style="width:60%; height:250px; object-fit:cover; display: block; margin: auto;" class="imagen-curso" alt="Curso Pijamas">
+        <div class="info">
+            <h3>Curso: Pijamas</h3>
+            <p>Confecciona conjuntos cómodos para toda la familia con acabados perfectos.</p>
+            <p class="precio">$6.00</p>
+            <button class="boton boton-detalles" onclick="abrirModal(
+                'Curso de Pijamas', 
+                'Aprenderás a confeccionar conjuntos cómodos para toda la familia. Incluye patrones.',  
+                'https://wa.me/584244048623?text=Hola Alejandra! Quiero inscribirme en el Curso de Pijamas por Pago Movil.', 
+                'https://wa.me/584244048623?text=Hola Alejandra! Me interesa el Curso de Pijamas por Binance Pay.', 
+                'https://alejandravitulano.gumroad.com/l/xsiqm',
+                'https://www.youtube.com/watch?v=MWr_IqurYlM',
+                ['pijama.jpg', 'videopijama.mp4']
+            )">Ver detalles</button>
+            <a href="https://wa.me/584244048623?text=Hola Alejandra, me interesa el curso de Pijamas" class="boton" target="_blank">Inscribirme</a>
+        </div>
+    </div>
+
+    <div class="tarjeta">
+        <img src="imagenes/curso3.jpeg" class="imagen-curso" alt="Próximo Curso">
+        <div class="info">
+            <h3>Curso: Especializado</h3>
+            <p>Nueva guía digital en preparación. Muy pronto disponible aquí.</p>
+            <p class="precio">$.00</p>
+            <button class="boton boton-detalles" onclick="abrirModal(
+                'Próximo Curso', 
+                'Esta guía está siendo perfeccionada para ti. ¡Pregúntame por WhatsApp para ser la primera en saber!', 
+                'https://wa.me/584244048623?text=Hola Alejandra! Quiero información sobre tus próximos cursos.', 
+                'https://wa.me/584244048623?text=Hola Alejandra! Me interesa saber los precios de tus nuevos cursos.', 
+                '#',
+                'https://www.youtube.com/@AlejandraVitulano-o1k',
+                ['/curso.jpeg', 'video-curso.jpeg.mp4.mp4']
+            )">Ver detalles</button>
+            <a href="https://wa.me/584244048623?text=Hola Alejandra, avísame cuando lances el nuevo curso" class="boton" target="_blank">Consultar</a>
+        </div>
+    </div>
+
+    <div class="tarjeta">
+        <img src="imagenes/curso4.jpeg" class="imagen-curso" alt="Próximo Curso">
+        <div class="info">
+            <h3>Curso: Avanzado</h3>
+            <p>Aprende técnicas de alta costura aplicadas a tus proyectos diarios.</p>
+            <p class="precio">$.00</p>
+            <button class="boton boton-detalles" onclick="abrirModal(
+                'Curso Avanzado', 
+                'Detalles del curso avanzado próximamente.', 
+                'https://wa.me/584244048623?text=Hola Alejandra! Me interesa el nivel avanzado.', 
+                'https://wa.me/584244048623?text=Hola Alejandra! ¿Qué ID de Binance usas para los cursos avanzados?', 
+                '#',
+                'https://www.youtube.com/@AlejandraVitulano-o1k',
+                ['/curso2.jpeg', 'video-curso2.jpeg.mp4.mp4']
+            )">Ver detalles</button>
+            <a href="https://wa.me/584244048623?text=Hola Alejandra, me interesa información de cursos avanzados" class="boton" target="_blank">Consultar</a>
+        </div>
+    </div>
+</div>
+
+<div class="seccion-patrones">
+    <h2>Venta de Patrones Digitales</h2>
+    <p>Adquiere mis moldes exclusivos listos para imprimir y coser.</p>
+    <a href="https://wa.me/584244048623?text=Hola Alejandra, quisiera más información sobre los patrones" class="boton" style="display:inline-block; padding: 15px 40px;" target="_blank">Ver Catálogo</a>
+</div>
+
+<div class="sobre-mi">
+    <h2>¿Quién te enseñará?</h2>
+    <p>"¡Hola! Soy Alejandra Vitulano. Este proyecto nació de mi pasión por las telas y la máquina de coser. Lo que comenzó como una curiosidad personal, se transformó en mi estilo de vida y hoy quiero compartirlo contigo. No creo en procesos complicados, creo en el placer de crear algo único con tus propias manos. Aquí no solo aprenderás técnica; te enseñaré a disfrutar cada costura, dándote las herramientas para que tus ideas tomen forma, puntada a puntada, con resultados de los que te sientas orgullosa."</p>
+    <div class="nombre-firma">Alejandra Vitulano</div>
+</div>
+
+<footer>
+    <div class="redes-iconos">
+        <a href="https://www.instagram.com/alejandravitulano/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61586998675183" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@AlejandraVitulano-o1k" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 Alejandra Vitulano - Academia de Costura.</p>
+</footer>
+
+<div id="miModal" class="modal-emergente">
+    <div class="modal-contenido">
+        <span onclick="cerrarModal()" style="position:absolute; top:10px; right:20px; font-size:30px; cursor:pointer;">&times;</span>
+        <h2 id="modalTitulo" style="font-family: 'Playfair Display', serif; border-bottom: 2px solid #e3d5ca; padding-bottom:10px;"></h2>
+        <div id="modalCuerpo" style="margin-bottom:20px;"></div>
+        
+        <div style="text-align:center;">
+            <p style="font-weight:bold; margin-bottom:10px; font-size: 0.9rem;">MÉTODOS DE PAGO:</p>
+            <button id="btnWhatsapp" class="boton" style="width:100%; border-radius:5px; margin-bottom:10px; background-color: #f8f5f2; color: #5e503f; border: 1px solid #5e503f;"><i class="fas fa-mobile-alt"></i> Pago Móvil</button>
+            <button id="btnBinance" class="boton" style="width:100%; border-radius:5px; margin-bottom:10px; background-color: #f3ba2f; color: #000;"><i class="fas fa-coins"></i> Binance Pay</button>
+            <a id="btnGumroad" href="#" target="_blank" class="boton" style="border-radius:5px; background-color: #5e503f; color: white;"><i class="fab fa-paypal"></i> PayPal / Tarjeta</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    let linkWhatsAppActual = "";
+    let linkBinanceActual = "";
+    let posicionSlider = 0;
+
+    function abrirModal(titulo, texto, linkWA, linkBinance, linkGum, linkYoutube, fotos = []) {
+        document.getElementById("modalTitulo").innerText = titulo;
+        posicionSlider = 0; 
+        let contenidoGaleria = "";
+        
+        if (fotos.length > 0) {
+            contenidoGaleria = '<div class="galeria-modal"><div class="slides-modal" id="slider">';
+            fotos.forEach(archivo => { 
+                if (archivo.endsWith('.mp4')) {
+                    contenidoGaleria += '<video controls style="width:100%; display:block"><source src="' + archivo + '" type="video/mp4"></video>';
+                } else {
+                    contenidoGaleria += '<img src="' + archivo + '">'; 
+                }
+            });
+            contenidoGaleria += '</div>' +
+                '<button class="btn-slide" style="left:5px" onclick="moverSlider(-1); event.stopPropagation();">&#10094;</button>' +
+                '<button class="btn-slide" style="right:5px" onclick="moverSlider(1); event.stopPropagation();">&#10095;</button>' +
+            '</div>';
+        }
+
+        document.getElementById("modalCuerpo").innerHTML = contenidoGaleria + 
+            '<div style="margin-top:15px;"><p>' + texto + '</p>' + 
+            '<a href="' + linkYoutube + '" target="_blank" style="color: #d5bdaf; font-weight: bold; text-decoration: underline; display: block; margin-top: 10px;">' + 
+            '<i class="fab fa-youtube"></i> Ver tutorial en YouTube</a></div>';
+        
+        linkWhatsAppActual = linkWA;
+        linkBinanceActual = linkBinance;
+        document.getElementById("btnGumroad").href = linkGum;
+        document.getElementById("btnGumroad").style.display = (linkGum === '#') ? "none" : "block";
+        document.getElementById("miModal").style.display = "block";
+    }
+
+    function moverSlider(dir) {
+        const slider = document.getElementById("slider");
+        if (!slider) return;
+        const total = slider.children.length;
+        posicionSlider = (posicionSlider + dir + total) % total;
+        slider.style.transform = 'translateX(' + (-posicionSlider * 100) + '%)';
+    }
+
+    function cerrarModal() { document.getElementById("miModal").style.display = "none"; }
+    document.getElementById("btnWhatsapp").onclick = function() { window.open(linkWhatsAppActual, '_blank'); };
+    document.getElementById("btnBinance").onclick = function() { window.open(linkBinanceActual, '_blank'); };
+    window.onclick = function(event) { if (event.target == document.getElementById("miModal")) cerrarModal(); };
+</script>
+</body>
+</html>
