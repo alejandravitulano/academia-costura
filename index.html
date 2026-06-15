@@ -218,7 +218,7 @@
             contenidoGaleria = '<div class="galeria-modal"><div class="slides-modal" id="slider">';
             fotos.forEach(archivo => { 
                 if (archivo.endsWith('.mp4')) {
-                    contenidoGlarea += '<video controls style="width:100%; display:block"><source src="' + archivo + '" type="video/mp4"></video>';
+                    contenidoGaleria += '<video controls style="width:100%; display:block"><source src="' + archivo + '" type="video/mp4"></video>';
                 } else {
                     contenidoGaleria += '<img src="' + archivo + '">'; 
                 }
@@ -258,3 +258,4 @@
 </body>
 
 </html>
+
