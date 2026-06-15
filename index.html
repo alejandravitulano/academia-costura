@@ -80,6 +80,9 @@
         .boton-detalles { background-color: var(--nude-oscuro); margin-bottom: 8px; border-radius: 5px; }
 
         .seccion-patrones { background-color: var(--beige-medio); padding: 40px 20px; text-align: center; margin: 30px 0; }
+        
+        .contenedor-catalogo { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
         .sobre-mi { max-width: 700px; margin: 50px auto; padding: 40px; background: white; text-align: center; border: 1px solid var(--nude-oscuro); border-radius: 10px; }
         .nombre-firma { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--nude-oscuro); }
 
@@ -126,7 +129,7 @@
                 'Aprenderás a manejar telas elásticas y acabados de lujo. Incluye PDF.', 
                 'https://wa.me/584244048623?text=Hola Alejandra! Quiero inscribirme en el Curso de Jersey por Pago Movil.', 
                 'https://wa.me/584244048623?text=Hola Alejandra! Me interesa el Curso de Jersey por Binance Pay.', 
-                'https://alejandravitulano.gumroad.com/l/zqrtx',
+                '#',
                 'https://www.youtube.com/watch?v=165EvVxnDtg',
                 ['jersey.jpg..jpeg', 'video-jersey.mp4'] 
             )">Ver detalles</button>
@@ -145,57 +148,31 @@
                 'Aprenderás a confeccionar conjuntos cómodos para toda la familia. Incluye patrones.',  
                 'https://wa.me/584244048623?text=Hola Alejandra! Quiero inscribirme en el Curso de Pijamas por Pago Movil.', 
                 'https://wa.me/584244048623?text=Hola Alejandra! Me interesa el Curso de Pijamas por Binance Pay.', 
-                'https://alejandravitulano.gumroad.com/l/xsiqm',
+                '#',
                 'https://www.youtube.com/watch?v=MWr_IqurYlM',
                 ['pijama.jpg', 'videopijama.mp4']
             )">Ver detalles</button>
             <a href="https://wa.me/584244048623?text=Hola Alejandra, me interesa el curso de Pijamas" class="boton" target="_blank">Inscribirme</a>
         </div>
     </div>
-
-    <div class="tarjeta">
-        <img src="imagenes/curso3.jpeg" class="imagen-curso" alt="Próximo Curso">
-        <div class="info">
-            <h3>Curso: Especializado</h3>
-            <p>Nueva guía digital en preparación. Muy pronto disponible aquí.</p>
-            <p class="precio">$.00</p>
-            <button class="boton boton-detalles" onclick="abrirModal(
-                'Próximo Curso', 
-                'Esta guía está siendo perfeccionada para ti. ¡Pregúntame por WhatsApp para ser la primera en saber!', 
-                'https://wa.me/584244048623?text=Hola Alejandra! Quiero información sobre tus próximos cursos.', 
-                'https://wa.me/584244048623?text=Hola Alejandra! Me interesa saber los precios de tus nuevos cursos.', 
-                '#',
-                'https://www.youtube.com/@AlejandraVitulano-o1k',
-                ['/curso.jpeg', 'video-curso.jpeg.mp4.mp4']
-            )">Ver detalles</button>
-            <a href="https://wa.me/584244048623?text=Hola Alejandra, avísame cuando lances el nuevo curso" class="boton" target="_blank">Consultar</a>
-        </div>
-    </div>
-
-    <div class="tarjeta">
-        <img src="imagenes/curso4.jpeg" class="imagen-curso" alt="Próximo Curso">
-        <div class="info">
-            <h3>Curso: Avanzado</h3>
-            <p>Aprende técnicas de alta costura aplicadas a tus proyectos diarios.</p>
-            <p class="precio">$.00</p>
-            <button class="boton boton-detalles" onclick="abrirModal(
-                'Curso Avanzado', 
-                'Detalles del curso avanzado próximamente.', 
-                'https://wa.me/584244048623?text=Hola Alejandra! Me interesa el nivel avanzado.', 
-                'https://wa.me/584244048623?text=Hola Alejandra! ¿Qué ID de Binance usas para los cursos avanzados?', 
-                '#',
-                'https://www.youtube.com/@AlejandraVitulano-o1k',
-                ['/curso2.jpeg', 'video-curso2.jpeg.mp4.mp4']
-            )">Ver detalles</button>
-            <a href="https://wa.me/584244048623?text=Hola Alejandra, me interesa información de cursos avanzados" class="boton" target="_blank">Consultar</a>
-        </div>
-    </div>
 </div>
 
 <div class="seccion-patrones">
-    <h2>Venta de Patrones Digitales</h2>
-    <p>Adquiere mis moldes exclusivos listos para imprimir y coser.</p>
-    <a href="https://wa.me/584244048623?text=Hola Alejandra, quisiera más información sobre los patrones" class="boton" style="display:inline-block; padding: 15px 40px;" target="_blank">Ver Catálogo</a>
+    <h2>Catálogo de Patrones Digitales</h2>
+    <p>Adquiere mis moldes exclusivos listos para imprimir y coser directamente aquí.</p>
+    
+    <div class="contenedor-catalogo">
+        <div class="tarjeta" style="margin: 0 auto;">
+            <img src="jersey.jpg..jpeg" class="imagen-curso" alt="Patrón Body"> 
+            <div class="info">
+                <h3>Patrón Digital: Body Cuello Cuadrado</h3>
+                <p>Pack completo de tallas listo para imprimir en formato PDF.</p>
+                <p class="precio">$5.00</p>
+                
+                <a class="gumroad-button boton" href="https://alejandravitulano.gumroad.com/l/zqrtx" data-gumroad-overlay-checkout="true" target="_blank">Comprar Patrón</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="sobre-mi">
@@ -223,7 +200,6 @@
             <p style="font-weight:bold; margin-bottom:10px; font-size: 0.9rem;">MÉTODOS DE PAGO:</p>
             <button id="btnWhatsapp" class="boton" style="width:100%; border-radius:5px; margin-bottom:10px; background-color: #f8f5f2; color: #5e503f; border: 1px solid #5e503f;"><i class="fas fa-mobile-alt"></i> Pago Móvil</button>
             <button id="btnBinance" class="boton" style="width:100%; border-radius:5px; margin-bottom:10px; background-color: #f3ba2f; color: #000;"><i class="fas fa-coins"></i> Binance Pay</button>
-            <a id="btnGumroad" href="#" target="_blank" class="boton" style="border-radius:5px; background-color: #5e503f; color: white;"><i class="fab fa-paypal"></i> PayPal / Tarjeta</a>
         </div>
     </div>
 </div>
@@ -242,7 +218,7 @@
             contenidoGaleria = '<div class="galeria-modal"><div class="slides-modal" id="slider">';
             fotos.forEach(archivo => { 
                 if (archivo.endsWith('.mp4')) {
-                    contenidoGaleria += '<video controls style="width:100%; display:block"><source src="' + archivo + '" type="video/mp4"></video>';
+                    contenidoGlarea += '<video controls style="width:100%; display:block"><source src="' + archivo + '" type="video/mp4"></video>';
                 } else {
                     contenidoGaleria += '<img src="' + archivo + '">'; 
                 }
@@ -260,8 +236,6 @@
         
         linkWhatsAppActual = linkWA;
         linkBinanceActual = linkBinance;
-        document.getElementById("btnGumroad").href = linkGum;
-        document.getElementById("btnGumroad").style.display = (linkGum === '#') ? "none" : "block";
         document.getElementById("miModal").style.display = "block";
     }
 
@@ -278,5 +252,8 @@
     document.getElementById("btnBinance").onclick = function() { window.open(linkBinanceActual, '_blank'); };
     window.onclick = function(event) { if (event.target == document.getElementById("miModal")) cerrarModal(); };
 </script>
+
+<script src="https://gumroad.com/js/gumroad.js"></script>
+
 </body>
 </html>
